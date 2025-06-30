@@ -1,55 +1,183 @@
-# configs
+# 🚀 macOS Development Environment Setup
 
-- [GitKraken](https://www.gitkraken.com)
-- [proxyman](https://proxyman.com)
-- [postman](https://www.postman.com/downloads/)
-- Dell - DDPM
-- DisplayLink Manager
-- MacDown
-- Python
-- The Unarchiver
-- Xcode
-- Visual Studio Code
-- WhatsApp
-- ruby `brew install ruby`
+A comprehensive guide to setting up a modern, productive development environment on macOS with a beautiful terminal, powerful tools, and essential applications.
 
-- [ohmyz.sh](https://ohmyz.sh)
-- [spaceship-prompt](https://github.com/spaceship-prompt/spaceship-prompt)
-- [dracula theme](https://draculatheme.com/terminal)
-- [Syntax Highlighting Plugin](https://github.com/zsh-users/zsh-syntax-highlighting)
-- [zsh Autosugestion Plugin](https://github.com/zsh-users/zsh-autosuggestions)
+## 📋 Table of Contents
 
+- [Quick Start](#-quick-start)
+- [Prerequisites](#-prerequisites)
+- [Core Tools](#-core-tools)
+- [Terminal Enhancement](#-terminal-enhancement)
+- [Development Applications](#-development-applications)
+- [Additional Resources](#-additional-resources)
 
-- [HomeBrew](https://brew.sh)
-- [CocoaPods](https://cocoapods.org)
+## 🏁 Quick Start
 
-# [Font Nerd](https://www.nerdfonts.com/font-downloads)
-install:
+1. **Clone this repository:**
+   ```bash
+   git clone https://github.com/salesawagner/configs.git ~/.config
+   ```
+
+2. **Open the workspace(need vscode):**
+   ```bash
+   open ~/.config/config.code-workspace
+   ```
+
+## 🔧 Prerequisites
+
+### Essential Package Manager
+Install [Homebrew](https://brew.sh) - The missing package manager for macOS:
 ```bash
-    brew install --cask font-hack-nerd-font
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-Terminal Setup: 
+### Development Environment
+- **Visual Studio Code**: [Download from official site](https://code.visualstudio.com/download)
+- **Ruby**: Required for various CLI tools
+  ```bash
+  brew install ruby
+  ```
 
-`Settings >> Prfiles >> Text >> Hack Nerd Font Regular`
+## 🛠 Core Tools
 
-# [Colorls](https://github.com/athityakumar/colorls)
-install:
+### SSH Configuration
+Set up SSH keys for secure GitHub access:
+- Follow the [official GitHub guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) for generating SSH keys
+
+### iOS Development
+Install [CocoaPods](https://cocoapods.org) for iOS dependency management:
+```bash
+brew install cocoapods
+```
+
+## 🎨 Terminal Enhancement
+
+### 1. Oh My Zsh Framework
+Install [Oh My Zsh](https://ohmyz.sh) for an enhanced shell experience:
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+### 2. Spaceship Prompt Theme
+Install the beautiful [Spaceship](https://spaceship-prompt.sh) theme:
+
+**Installation:**
+```bash
+git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+```
+
+**Create symlink:**
+```bash
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+```
+
+**Activation:**
+Set `ZSH_THEME="spaceship"` in your `.zshrc` file.
+
+**Configuration:**
+Add this line at the end of your `~/.zshrc` file to load custom configurations:
+```bash
+source "$HOME/.config/.myzsh.zsh"
+```
+
+### 3. Essential Zsh Plugins
+
+#### Auto-suggestions
+[zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) - Fish-like autosuggestions:
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+```
+
+#### Syntax Highlighting
+[zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) - Real-time syntax highlighting:
+```bash
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+```
+
+#### Fast Syntax Highlighting
+[fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting) - Enhanced syntax highlighting:
+```bash
+git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git $ZSH_CUSTOM/plugins/fast-syntax-highlighting
+```
+
+#### Auto-complete
+[zsh-autocomplete](https://github.com/marlonrichert/zsh-autocomplete) - Real-time type-ahead autocompletion:
+```bash
+git clone https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
+```
+
+### 4. Dracula Theme
+Install the elegant [Dracula theme](https://draculatheme.com/terminal) for Terminal:
+
+**Installation:**
+```bash
+git clone https://github.com/dracula/terminal-app.git ~/.config/dracula-theme
+```
+
+**Setup Instructions:**
+1. Open **Terminal** → **Settings**
+2. Navigate to **Profiles** tab
+3. Click the **"..."** button under the themes list
+4. Select **Import...**
+5. Choose `~/.config/dracula-theme/Dracula.terminal`
+6. Set as **Default**
+
+### 5. Nerd Fonts
+Install [Hack Nerd Font](https://www.nerdfonts.com/font-downloads) for icon support:
+
+**Installation:**
+```bash
+brew install --cask font-hack-nerd-font
+```
+
+**Terminal Configuration:**
+Navigate to **Settings** → **Profiles** → **Text** → Select **Hack Nerd Font Retina**
+
+### 6. Colorls
+Enhanced `ls` command with colors and icons using [colorls](https://github.com/athityakumar/colorls):
+
+**Installation:**
 ```bash
 sudo gem install colorls
 ```
-Install Dracula Theme: [colorls](https://draculatheme.com/)
 
+**Dracula Theme for Colorls:**
+```bash
+git clone git@github.com:dracula/colorls.git ~/.config/colorls
+```
 
-Set the aliases (Contains in `.aliases.shz`):
+**Useful Aliases:**
+Add these to your `.aliases.zsh`:
 ```bash
 alias ls='colorls --sort-dirs -1'
 alias lc='colorls -lA --sd'
 ```
 
+## 💻 Development Applications
 
-# refs
+### Essential Tools
+- **[GitKraken](https://www.gitkraken.com)** - Git GUI client
+- **[Proxyman](https://proxyman.com)** - HTTP debugging proxy
+- **[Postman](https://www.postman.com/downloads/)** - API development platform
 
-- https://www.rocketseat.com.br/blog/artigos/post/terminal-com-oh-my-zsh-spaceship-dracula-e-mais
-- https://manuelrdsg.github.io/2018/10/improving-the-look-of-your-macos-terminal/
-- https://www.alura.com.br/artigos/oh-my-zsh-melhorando-produtividade-terminal
+### System Utilities
+- **Dell Display Manager** - Display management
+- **DisplayLink Manager** - Multi-monitor support
+- **MacDown** - Markdown editor
+- **The Unarchiver** - Archive utility
+
+### Development Environments
+- **Python** - Programming language
+- **Xcode** - iOS/macOS development
+
+## 📚 Additional Resources
+
+### Helpful Guides
+- [Terminal customization guide](https://gist.github.com/n1snt/454b879b8f0b7995740ae04c5fb5b7df)
+- [RocketSeat terminal setup (PT-BR)](https://www.rocketseat.com.br/blog/artigos/post/terminal-com-oh-my-zsh-spaceship-dracula-e-mais)
+- [macOS terminal improvements](https://manuelrdsg.github.io/2018/10/improving-the-look-of-your-macos-terminal/)
+- [Oh My Zsh productivity tips (PT-BR)](https://www.alura.com.br/artigos/oh-my-zsh-melhorando-produtividade-terminal)
+
+---
+
+**Note:** This setup creates a beautiful, functional development environment optimized for productivity and aesthetics. Each tool has been carefully selected to enhance the development workflow.
