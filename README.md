@@ -31,12 +31,20 @@ Install [Homebrew](https://brew.sh) - The missing package manager for macOS:
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
+**Batch Installation with Brewfile:**
+This repository includes a `Brewfile` that allows you to install multiple packages at once:
+```bash
+brew bundle --file=~/.config/Brewfile
+```
+
 ### Development Environment
+- **Xcode**: [Download from official site](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://apps.apple.com/br/app/xcode)
 - **Visual Studio Code**: [Download from official site](https://code.visualstudio.com/download)
 - **Ruby**: Required for various CLI tools
   ```bash
   brew install ruby
   ```
+  > **Note:** If you used `brew bundle` above, Ruby is already installed and you can skip this step.
 
 ## 🛠 Core Tools
 
@@ -49,6 +57,7 @@ Install [CocoaPods](https://cocoapods.org) for iOS dependency management:
 ```bash
 brew install cocoapods
 ```
+> **Note:** If you used `brew bundle` above, CocoaPods is already installed and you can skip this step.
 
 ## 🎨 Terminal Enhancement
 
@@ -129,9 +138,18 @@ Install [Hack Nerd Font](https://www.nerdfonts.com/font-downloads) for icon supp
 ```bash
 brew install --cask font-hack-nerd-font
 ```
+> **Note:** If you used `brew bundle` above, Hack Nerd Font is already installed and you can skip this step.
 
 **Terminal Configuration:**
 Navigate to **Settings** → **Profiles** → **Text** → Select **Hack Nerd Font Retina**
+
+Install [Fira Code Nerd Font](https://www.nerdfonts.com/font-downloads) for icon support:
+
+**Installation:**
+```bash
+brew install --cask font-fira-code-nerd-font
+```
+> **Note:** If you used `brew bundle` above, Hack Nerd Font is already installed and you can skip this step.
 
 ### 6. Colorls
 Enhanced `ls` command with colors and icons using [colorls](https://github.com/athityakumar/colorls):
@@ -153,6 +171,27 @@ alias ls='colorls --sort-dirs -1'
 alias lc='colorls -lA --sd'
 ```
 
+## 🎨 IDEs Enhancement
+- **[Dracula for Xcode](https://draculatheme.com/xcode)**
+   ```bash
+   brew tap dracula/install
+   brew install --cask dracula-xcode
+   ```
+   > **Note:** If you used `brew bundle` above, Hack Nerd Font is already installed and you can skip this step.
+
+   ### Activating theme
+   1. Xcode > Preferences > Themes;
+   2. Select the Dracula Theme;
+   3. Select Fira code font
+
+- **[Dracula for VSCode](https://draculatheme.com/visual-studio-code)**
+   ### Install using Command Palette
+   1. Go to `View -> Command Palette` or press `Ctrl+Shift+P`
+   2. Then enter `Install Extension`
+   3. Write `Dracula Official`
+   4. Select it or press Enter to install
+   5. Install Fira Code Font: [link](https://github.com/tonsky/FiraCode/wiki/VS-Code-Instructions)
+
 ## 💻 Development Applications
 
 ### Essential Tools
@@ -161,14 +200,13 @@ alias lc='colorls -lA --sd'
 - **[Postman](https://www.postman.com/downloads/)** - API development platform
 
 ### System Utilities
-- **Dell Display Manager** - Display management
-- **DisplayLink Manager** - Multi-monitor support
-- **MacDown** - Markdown editor
-- **The Unarchiver** - Archive utility
+- **[Dell Display and Peripheral Manager](https://www.dell.com/support/product-details/pt-br/product/dell-display-peripheral-manager/drivers)** - Display management
+- **[DisplayLink Manager](https://www-synaptics-com.translate.goog/products/displaylink-graphics/downloads/macoshttps://www.synaptics.com/products/displaylink-graphics/downloads/macos)** - Multi-monitor support
+- **[MacDown](https://macdown.uranusjr.com)** - Markdown editor
+- **[The Unarchiver](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://apps.apple.com/br/app/the-unarchiver)** - Archive utility
 
 ### Development Environments
-- **Python** - Programming language
-- **Xcode** - iOS/macOS development
+- **[Python](https://packaging.python.org/en/latest/tutorials/installing-packages/)** - Programming language
 
 ## 📚 Additional Resources
 
